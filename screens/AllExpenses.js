@@ -1,0 +1,15 @@
+import { useContext } from "react";
+import ExpensesOutput from "../components/ExpensesOutput/ExpensesOutput";
+import { ExpensesContext } from "../store/expenses-context";
+
+function AllExpenses() {
+  const expesenseCtx = useContext(ExpensesContext);
+  return (
+    <ExpensesOutput
+      expenses={expesenseCtx.expenses}
+      expensePeriod="TOTAL"
+      fallbackText="No registered expenses found!"
+    />
+  );
+}
+export default AllExpenses;
